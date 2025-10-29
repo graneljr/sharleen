@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharleen Lazaro | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e6ccff, #f7e7ff);
+            overflow: hidden;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav h1 {
+            color: #6c4aa1;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li {
+            cursor: pointer;
+            color: #444;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li:hover {
+            color: #6c4aa1;
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 100px 40px;
+            text-align: left;
+            transition: opacity 0.5s ease;
+        }
+
+        section.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Shared Styles */
+        .text-content {
+            max-width: 500px;
+        }
+
+        h2 {
+            color: #6c4aa1;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Home Section */
+        #home img {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 4px solid white;
+        }
+
+        #home .text-content p {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        #about img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #contact input,
+        #contact textarea {
+            padding: 12px;
+            width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        #contact button {
+            background-color: #6c4aa1;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #593d85;
+        }
+
+        footer {
+            text-align: center;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        @media (max-width: 900px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding-top: 120px;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1>Sharleen</h1>
+        <ul>
+            <li onclick="showSection('home')">Home</li>
+            <li onclick="showSection('about')">About</li>
+            <li onclick="showSection('contact')">Contact</li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="active">
+        <img src="shar.jpg" alt="Sharleen Lazaro">
+        <div class="text-content">
+            <h2>Sharleen Lazaro</h2>
+            <p>“Success doesn’t come from what you do occasionally, but from what you do consistently.”</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <img src="shar.jpg" alt="Sharleen Lazaro">
+        <div class="text-content">
+            <h2>About Me</h2>
+            <p>Hello! I'm <strong>Sharleen Lazaro</strong>, a college student who loves learning and growing through new
+                experiences.
+                I believe in the power of perseverance and positivity — that every effort, no matter how small, shapes
+                who I am becoming.
+                My goal is to inspire others by pursuing my dreams with confidence and heart.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="text-content">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>© 2025 Sharleen Lazaro | All Rights Reserved</footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
